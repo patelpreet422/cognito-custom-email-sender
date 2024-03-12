@@ -1,0 +1,11 @@
+#!/bin/zsh
+rm -rf dist
+npm run build 
+cd dist
+mv index.js index.mjs
+cp -rf ../node_modules node_modules
+zip -q -r lambda.zip . 
+unzip -l lambda.zip
+# aws s3 cp lambda.zip s3://new-custom-email-sender
+# s3://new-custom-email-sender/lambda.zip  
+aws lambda update-function-code --function-name new-custom-email-sender --zip-file fileb://lambda.zip

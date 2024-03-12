@@ -1,0 +1,311 @@
+{
+    "UserPool": {
+        "Id": "ap-south-1_h1l0zAs0z",
+        "Name": "spring-app-pool",
+        "Policies": {
+            "PasswordPolicy": {
+                "MinimumLength": 8,
+                "RequireUppercase": true,
+                "RequireLowercase": true,
+                "RequireNumbers": true,
+                "RequireSymbols": true,
+                "TemporaryPasswordValidityDays": 7
+            }
+        },
+        "DeletionProtection": "ACTIVE",
+        "LambdaConfig": {
+            "PreSignUp": "arn:aws:lambda:ap-south-1:734271294681:function:pre-signup-trigger",
+            "PostConfirmation": "arn:aws:lambda:ap-south-1:734271294681:function:post-confirmation-cognito",
+            "PreAuthentication": "arn:aws:lambda:ap-south-1:734271294681:function:pre-auth-trigger-cognito",
+            "PostAuthentication": "arn:aws:lambda:ap-south-1:734271294681:function:post-auth-trigger-cognito",
+            "PreTokenGeneration": "arn:aws:lambda:ap-south-1:734271294681:function:pre-token-gen-cognito",
+            "PreTokenGenerationConfig": {
+                "LambdaVersion": "V1_0",
+                "LambdaArn": "arn:aws:lambda:ap-south-1:734271294681:function:pre-token-gen-cognito"
+            },
+            "UserMigration": "arn:aws:lambda:ap-south-1:734271294681:function:migrate-user-tigger-cognito"
+        },
+        "LastModifiedDate": "2024-02-19T16:06:20.638000+05:30",
+        "CreationDate": "2023-10-30T14:38:13.979000+05:30",
+        "SchemaAttributes": [
+            {
+                "Name": "sub",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": false,
+                "Required": true,
+                "StringAttributeConstraints": {
+                    "MinLength": "1",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "name",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "given_name",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "family_name",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "middle_name",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "nickname",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "preferred_username",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "profile",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "picture",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "website",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "email",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": true,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "email_verified",
+                "AttributeDataType": "Boolean",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false
+            },
+            {
+                "Name": "gender",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "birthdate",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "10",
+                    "MaxLength": "10"
+                }
+            },
+            {
+                "Name": "zoneinfo",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "locale",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "phone_number",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": true,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "phone_number_verified",
+                "AttributeDataType": "Boolean",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false
+            },
+            {
+                "Name": "address",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {
+                    "MinLength": "0",
+                    "MaxLength": "2048"
+                }
+            },
+            {
+                "Name": "updated_at",
+                "AttributeDataType": "Number",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "NumberAttributeConstraints": {
+                    "MinValue": "0"
+                }
+            },
+            {
+                "Name": "custom:role",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {}
+            },
+            {
+                "Name": "identities",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {}
+            }
+        ],
+        "AutoVerifiedAttributes": [
+            "email"
+        ],
+        "UsernameAttributes": [
+            "email"
+        ],
+        "VerificationMessageTemplate": {
+            "EmailMessageByLink": "Please click the link below to verify your email address. {##Verify Email##}",
+            "EmailSubjectByLink": "Your verification link",
+            "DefaultEmailOption": "CONFIRM_WITH_LINK"
+        },
+        "UserAttributeUpdateSettings": {
+            "AttributesRequireVerificationBeforeUpdate": [
+                "email"
+            ]
+        },
+        "MfaConfiguration": "OPTIONAL",
+        "EstimatedNumberOfUsers": 6,
+        "EmailConfiguration": {
+            "SourceArn": "arn:aws:ses:ap-south-1:734271294681:identity/patelpreet422@gmail.com",
+            "EmailSendingAccount": "DEVELOPER"
+        },
+        "SmsConfiguration": {
+            "SnsCallerArn": "arn:aws:iam::734271294681:role/service-role/coginto-spring-sms",
+            "ExternalId": "f38c7082-c1b8-478d-8d45-28ce3570670b",
+            "SnsRegion": "ap-south-1"
+        },
+        "UserPoolTags": {},
+        "SmsConfigurationFailure": "SNSSandbox",
+        "Domain": "spring-app",
+        "AdminCreateUserConfig": {
+            "AllowAdminCreateUserOnly": true,
+            "UnusedAccountValidityDays": 7,
+            "InviteMessageTemplate": {
+                "SMSMessage": "Your username is {username} and temporary password is {####}. ",
+                "EmailMessage": "Greeting from KMBL. You have been invited to visit https://ui.cc-cards.com to explore new ways to manage your corporate credit cards. Your username is {username} and temporary password is {####}",
+                "EmailSubject": "Your temporary password"
+            }
+        },
+        "UsernameConfiguration": {
+            "CaseSensitive": false
+        },
+        "Arn": "arn:aws:cognito-idp:ap-south-1:734271294681:userpool/ap-south-1_h1l0zAs0z",
+        "AccountRecoverySetting": {
+            "RecoveryMechanisms": [
+                {
+                    "Priority": 1,
+                    "Name": "verified_email"
+                }
+            ]
+        }
+    }
+}

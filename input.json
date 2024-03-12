@@ -1,0 +1,74 @@
+{
+    "UserPoolId": "ap-south-1_h1l0zAs0z",
+    "Policies": {
+        "PasswordPolicy": {
+            "MinimumLength": 8,
+            "RequireUppercase": true,
+            "RequireLowercase": true,
+            "RequireNumbers": true,
+            "RequireSymbols": true,
+            "TemporaryPasswordValidityDays": 7
+        }
+    },
+    "DeletionProtection": "ACTIVE",
+    "LambdaConfig": {
+        "PreSignUp": "arn:aws:lambda:ap-south-1:734271294681:function:pre-signup-trigger",
+        "PostConfirmation": "arn:aws:lambda:ap-south-1:734271294681:function:post-confirmation-cognito",
+        "PreAuthentication": "arn:aws:lambda:ap-south-1:734271294681:function:pre-auth-trigger-cognito",
+        "PostAuthentication": "arn:aws:lambda:ap-south-1:734271294681:function:post-auth-trigger-cognito",
+        "PreTokenGeneration": "arn:aws:lambda:ap-south-1:734271294681:function:pre-token-gen-cognito",
+        "PreTokenGenerationConfig": {
+            "LambdaVersion": "V1_0",
+            "LambdaArn": "arn:aws:lambda:ap-south-1:734271294681:function:pre-token-gen-cognito"
+        },
+        "UserMigration": "arn:aws:lambda:ap-south-1:734271294681:function:migrate-user-tigger-cognito",
+        "CustomEmailSender": {
+            "LambdaArn": "arn:aws:lambda:ap-south-1:734271294681:function:new-custom-email-sender",
+            "LambdaVersion": "V1_0"
+        },
+        "KMSKeyID": "arn:aws:kms:ap-south-1:734271294681:key/a441944f-621a-46db-a3c7-8f8289ee2f34"
+    },
+    "AutoVerifiedAttributes": [
+        "email"
+    ],
+    "VerificationMessageTemplate": {
+        "EmailMessageByLink": "Please click the link below to verify your email address. {##Verify Email##}",
+        "EmailSubjectByLink": "Your verification link",
+        "DefaultEmailOption": "CONFIRM_WITH_LINK"
+    },
+    "UserAttributeUpdateSettings": {
+        "AttributesRequireVerificationBeforeUpdate": [
+            "email"
+        ]
+    },
+    "MfaConfiguration": "OPTIONAL",
+    "EmailConfiguration": {
+        "SourceArn": "arn:aws:ses:ap-south-1:734271294681:identity/patelpreet422@gmail.com",
+        "EmailSendingAccount": "DEVELOPER"
+    },
+    "SmsConfiguration": {
+        "SnsCallerArn": "arn:aws:iam::734271294681:role/service-role/coginto-spring-sms",
+        "ExternalId": "f38c7082-c1b8-478d-8d45-28ce3570670b",
+        "SnsRegion": "ap-south-1"
+    },
+    "UserPoolTags": {},
+    "AdminCreateUserConfig": {
+        "AllowAdminCreateUserOnly": true,
+        "InviteMessageTemplate": {
+            "SMSMessage": "Your username is {username} and temporary password is {####}. ",
+            "EmailMessage": "Greeting from KMBL. You have been invited to visit https://ui.cc-cards.com to explore new ways to manage your corporate credit cards. Your username is {username} and temporary password is {####}",
+            "EmailSubject": "Your temporary password"
+        }
+    },
+    "UserPoolAddOns": {
+        "AdvancedSecurityMode": "OFF"
+    },
+    "AccountRecoverySetting": {
+        "RecoveryMechanisms": [
+            {
+                "Priority": 1,
+                "Name": "verified_email"
+            }
+        ]
+    }
+}
